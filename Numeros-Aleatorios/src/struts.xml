@@ -5,5 +5,8 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
+		<action name="NumeroAleatorio" class="br.com.aleatorios.actions.NumeroAleatorioAction">
+			<result name="success">/NumeroAleatorio.jsp</result>
+		</action>
 	</package>
 </struts>
