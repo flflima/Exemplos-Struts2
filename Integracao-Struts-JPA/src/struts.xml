@@ -6,7 +6,7 @@
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
 		<action name="AdicionaCarro" class="br.com.integracaostrutscomjpa.actions.AdicionaCarroAction">
-			<result name="success">/Lista.jsp</result>
+			<result name="success">/lista.jsp</result>
 		</action>
 	</package>
 </struts>
