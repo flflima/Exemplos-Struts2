@@ -5,6 +5,8 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
-
+		<action name="Erro" class="br.com.paginasdeerro.actions.ErroAction">
+			<result name="success">/erro.jsp</result>
+		</action>
 	</package>
 </struts>
