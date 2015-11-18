@@ -5,6 +5,14 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
+		<global-results>
+			<result name="error">/pagina-de-erro.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception" />
+		</global-exception-mappings>
+	
 		<action name="Erro" class="br.com.paginasdeerro.actions.ErroAction">
 			<result name="success">/erro.jsp</result>
 		</action>
