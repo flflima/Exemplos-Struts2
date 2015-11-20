@@ -5,6 +5,25 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
-
+		<action name="UsuarioAdicionaOuAltera" class="br.com.crud.actions.UsuarioAction"
+				method="adicionaOuAltera">
+			<result name="success" type="redirectAction">UsuarioLista</result>
+			<result name="input">/usuarioFormulario.jsp</result>
+		</action>
+		
+		<action name="UsuarioRemove" class="br.com.crud.actions.UsuarioAction"
+				method="remove">
+			<result name="success" type="redirectAction">UsuarioLista</result>
+		</action>
+		
+		<action name="UsuarioPreparaAlteracao" class="br.com.crud.actions.UsuarioAction"
+				method="preparaAlteracao">
+			<result name="success">/usuarioFormulario.jsp</result>
+		</action>
+		
+		<action name="UsuarioLista" class="br.com.crud.actions.UsuarioAction"
+				method="lista">
+			<result name="success">/lista.jsp</result>
+		</action>
 	</package>
 </struts>
