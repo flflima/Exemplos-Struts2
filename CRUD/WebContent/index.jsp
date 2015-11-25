@@ -3,7 +3,6 @@
 <head>
 <title>CRUD</title>
 </head>
-<body>
-	<s:a name="UsuarioLista">Usuários</s:a>
-</body>
+	<%-- Executa a lógica para popular a lista de usuários --%>
+	<s:a action="UsuarioLista">Usuários</s:a>
 </html>
