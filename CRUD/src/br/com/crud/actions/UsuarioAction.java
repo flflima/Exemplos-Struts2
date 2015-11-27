@@ -2,6 +2,9 @@ package br.com.crud.actions;
 
 import java.util.List;
 
+import br.com.crud.factory.RepositoryFactory;
+import br.com.crud.factory.UsuarioRepositoryFactory;
+import br.com.crud.model.Repository;
 import br.com.crud.model.Usuario;
 import br.com.crud.model.UsuarioRepository;
 
@@ -11,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UsuarioAction extends ActionSupport
 {
 	private Usuario usuario = new Usuario();
+	private RepositoryFactory factory = new UsuarioRepositoryFactory();
 	
 	private List<Usuario> usuarios;
 	
@@ -26,7 +30,7 @@ public class UsuarioAction extends ActionSupport
 
 	public String adicionaOuAltera()
 	{
-		UsuarioRepository repository = new UsuarioRepository();
+		Repository repository = this.factory.criarRepository();
 		
 		if(this.usuario.getId() == null)
 		{
@@ -44,7 +48,7 @@ public class UsuarioAction extends ActionSupport
 	
 	public String remove()
 	{
-		UsuarioRepository repository = new UsuarioRepository();
+		Repository repository = this.factory.criarRepository();
 		repository = new UsuarioRepository();
 		repository.remove(this.usuario.getId());
 		this.usuario = new Usuario();
@@ -53,14 +57,14 @@ public class UsuarioAction extends ActionSupport
 	
 	public String preparaAlteracao()
 	{
-		UsuarioRepository repository = new UsuarioRepository();
+		Repository repository = this.factory.criarRepository();
 		this.usuario = repository.busca(this.usuario.getId());
 		return UsuarioAction.SUCCESS;
 	}
 	
 	public String lista()
 	{
-		UsuarioRepository repository = new UsuarioRepository();
+		Repository repository = this.factory.criarRepository();
 		this.usuarios = repository.lista();
 		return UsuarioAction.SUCCESS;
 	}
