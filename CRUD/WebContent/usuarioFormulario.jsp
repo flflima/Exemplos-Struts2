@@ -8,6 +8,13 @@
 	<s:a href="index.jsp">Home</s:a>
 	<hr/>
 	
-	<h1></h1>
+	<h1>Cadastro ou Alteração de Usuários</h1>
+	<s:form action="UsuarioAdicionaOuAltera">
+		<s:hidden name="usuario.id"/>
+		<s:textfield label="Nome: " name="usuario.nome" />
+		<s:textfield label="Username: " name="usuario.username" />
+		<s:textfield label="Password: " name="usuario.password" />
+		<s:submit value="Salvar" />
+	</s:form>
 </body>
 </html>
