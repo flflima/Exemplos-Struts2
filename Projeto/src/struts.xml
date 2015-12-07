@@ -5,6 +5,13 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default">
-
+		<action name="login" class="br.com.projeto.actions.AutenticacaoAction" method="login">
+			<result name="success">/home.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		
+		<action name="logout" class="br.com.projeto.actions.AutenticacaoAction" method="logout">
+			<result name="success">/login.jsp</result>
+		</action>
 	</package>
 </struts>
